@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Magnifica Questionnaire Form Wizard includes Coronavirus Health questionnaire"
+    />
+    <meta name="author" content="Ansonika" />
+    <title>Codeloccol | Formulaire de bus</title>
+
+    <!-- Favicons-->
+    <link
+      rel="shortcut icon"
+      href="img/LOGO-CODELOCCOL-FAV.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/x-icon"
+      href="img/apple-touch-icon-57x57-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/x-icon"
+      sizes="72x72"
+      href="img/apple-touch-icon-72x72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/x-icon"
+      sizes="114x114"
+      href="img/apple-touch-icon-114x114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/x-icon"
+      sizes="144x144"
+      href="img/apple-touch-icon-144x144-precomposed.png"
+    />
+
+    <!-- GOOGLE WEB FONT -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- BASE CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/menu.css" rel="stylesheet" />
+    <link href="css/form.css" rel="stylesheet" />
+    <link href="css/vendors.css" rel="stylesheet" />
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <!-- MODERNIZR MENU -->
+    <script src="js/modernizr.js"></script>
+  </head>
+
+  <body>
+    <div id="preloader">
+      <div data-loader="circle-side"></div>
+    </div>
+    <!-- /Preload -->
+
+    <div id="loader_form">
+      <div data-loader="circle-side-2"></div>
+    </div>
+    <!-- /loader_form -->
+
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <a href="index.html"
+              ><img
+                src="img/Codeloccol.png"
+                alt=""
+                width="178"
+                height="45"
+                class="d-none d-md-block" /><img
+                src="img/Codeloccol2 (1).png"
+                alt=""
+                width="62"
+                height="45"
+                class="d-block d-md-none"
+            /></a>
+          </div>
+          <div class="col-9">
+            <div id="social">
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com/codeloccol"
+                    ><i class="icon-facebook"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/codeloccol"
+                    ><i class="icon-twitter"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/codeloccol/"
+                    ><i class="icon-instagram"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/codeloccol/"
+                    ><i class="icon-linkedin"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <!-- /social -->
+            <a href="#0" class="cd-nav-trigger"
+              >Menu<span class="cd-icon"></span
+            ></a>
+            <!-- /menu button -->
+            <nav>
+              <ul class="cd-primary-nav">
+                <li>
+                  <a href="index.html" class="animated_link"
+                    >Retour au formulaire</a
+                  >
+                </li>
+                <li>
+                  <a href="instructions.html" class="animated_link"
+                    >Instructions</a
+                  >
+                </li>
+                <li>
+                  <a href="contacts.html" class="animated_link"
+                    >Contactez-nous</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <!-- /menu -->
+          </div>
+        </div>
+      </div>
+      <!-- /container -->
+    </header>
+    <!-- /Header -->
+
+    <div class="container">
+      <div id="form_container">
+        <div class="row no-gutters">
+          <div class="col-lg-4">
+            <div id="left_form">
+              <figure>
+                <img
+                  class="png-bus"
+                  src="img/bus-homme.png"
+                  alt=""
+                  width="100"
+                  height="100"
+                />
+              </figure>
+              <h2>Formulaire de visite <span>CODELOCCOL</span></h2>
+              <p>
+                Ce formulaire nous permez de vous inscrire sur la liste de nos
+                visiteurs.
+              </p>
+              <a
+                href="www.codeloccol.org"
+                class="btn_1 rounded yellow purchase"
+                target="_parent"
+                >Notre charte</a
+              >
+              <a
+                href="www.codeloccol.org"
+                class="btn_1 rounded mobile_btn yellow"
+                >Notre charte</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div id="wizard_container">
+              <div id="top-wizard">
+                <div id="progressbar"></div>
+                <span id="location"></span>
+              </div>
+              <!-- /top-wizard -->
+              <form
+                name="submit-to-google-sheet"
+                id="wrapped"
+                method="POST"
+                action="https://script.google.com/macros/s/AKfycbyb4krRS4QKLoT-uL5WsltUXqmNrxOcqJG1A_CdUMU7I0JAyQLctZ4d7jZrtJD_0qO6/exec"
+              >
+                <input id="website" name="website" type="text" value="" />
+                <!-- ce input est là pour de raisons de sécurité -->
+                <div id="middle-wizard">
+                  <div class="step">
+                    <h3 class="main_question">
+                      <i class="arrow_right"></i>Renseignez les informations
+                      vous concernant
+                    </h3>
+                    <div class="form-group add_top_30">
+                      <label for="first-name">Prénom :</label>
+                      <input
+                        type="text"
+                        name="first-name"
+                        id="first-name"
+                        class="form-control required"
+                        onchange="getVals(this, 'first-name_field');"
+                        autocomplete="given-name"
+                      />
+                    </div>
+                    <div class="form-group add_top_30">
+                      <label for="last-name">Nom :</label>
+                      <input
+                        type="text"
+                        name="last-name"
+                        id="last-name"
+                        class="form-control required"
+                        onchange="getVals(this, 'last-name_field');"
+                        autocomplete="family-name"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Adresse E-mail :</label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        class="form-control required"
+                        onchange="getVals(this, 'email_field');"
+                        autocomplete="email"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="profession">Profession :</label>
+                      <input
+                        type="text"
+                        name="profession"
+                        id="profession"
+                        class="form-control required"
+                        onchange="getVals(this, 'profession_field');"
+                        autocomplete="organization-title"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Mobile (whatsapp)</label>
+                      <input
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        class="form-control required"
+                        onchange="getVals(this, 'phone_field')"
+                        autocomplete="tel"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="visit_date"
+                        >Sélectionnez la date de votre visite :</label
+                      >
+                      <input
+                        type="date"
+                        name="visit_date"
+                        id="visit_date"
+                        class="form-control required"
+                        onchange="getVals(this, 'visit_date_field')"
+                        autocomplete=""
+                      />
+                    </div>
+                    <!--      Durée de visite -->
+                    <div class="form-group">
+                      <label for="visit_duration">Durée de visite :</label>
+                      <input
+                        type="text"
+                        name="visit_duration"
+                        id="visit_duration"
+                        class="form-control"
+                        placeholder="Entrez la durée de votre visite"
+                        onchange="getVals(this, 'visit_duration_field')"
+                        autocomplete="duration"
+                      />
+                    </div>
+
+                    <!--  form :raison parler -->
+                    <div class="form-group" id="div-reason">
+                      <label for="reason_visite"
+                        >La raison de votre visite :</label
+                      >
+                      <select
+                        name="reason_visite"
+                        id="reason"
+                        class="form-control required"
+                        onchange="getVals(this, 'reason_field');"
+                        autocomplete="off"
+                      >
+                        <option value="Selectionner une option">
+                          Sélectionner une option
+                        </option>
+                        <option value="Visite professionnelle">
+                          Visite professionnelle
+                        </option>
+                        <option value="Visite personnelle">
+                          Visite personnelle
+                        </option>
+                        <option value="Autre">Autre</option>
+                      </select>
+                    </div>
+                    <!--  Autre Textarea :raison visite -->
+                    <div class="form-group" id="autre-raison">
+                      <label for="other_reason_name">Autre :</label>
+                      <textarea
+                        name="other_reason_name"
+                        id="other_reason"
+                        class="form-control"
+                        onchange="getVals(this, 'reason_field')"
+                        autocomplete="off"
+                      ></textarea>
+                    </div>
+                    <!--  form :entendu parler -->
+                    <div class="form-group" id="div-entendu">
+                      <label for="heard_about_codeloccol"
+                        >Où avez-vous entendu parler de codeloccol? :</label
+                      >
+                      <select
+                        name="heard_about_codeloccol"
+                        id="heard_about"
+                        class="form-control required"
+                        onchange="getVals(this, 'heard_about_field');"
+                        autocomplete="off"
+                      >
+                        <option value="Selectionner une option">
+                          Sélectionner une option
+                        </option>
+                        <option value="Réseaux sociaux">Réseaux sociaux</option>
+                        <option value="Bouche à oreille">
+                          Bouche à oreille
+                        </option>
+                        <option value="Internet">Internet</option>
+                        <option value="Affiche">Affiche</option>
+                        <option value="Autre">Autre</option>
+                      </select>
+                    </div>
+                    <!--  Autre Textarea :entendu parler -->
+                    <div class="form-group" id="autre-entendu">
+                      <label for="heard_about_other">Autre :</label>
+                      <textarea
+                        name="heard_about_other_codeloccol"
+                        id="heard_about_other"
+                        class="form-control"
+                        onchange="getVals(this, 'heard_about_field');"
+                        autocomplete="off"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <!--step-->
+
+                  <div class="submit step" id="end">
+                    <div class="summary">
+                      <div class="wrapper">
+                        <h4>
+                          Nous vous remercions pour votre inscription<br /><span
+                            id="first-name_field"
+                          ></span
+                          >!
+                        </h4>
+                        <p>
+                          Nous vous contacterons à ce courriel
+                          <strong id="email_field"></strong> pour la
+                          confirmation.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /Fin last step-->
+                </div>
+                <!-- /Fin middle-wizard -->
+                <div id="bottom-wizard">
+                  <button type="button" name="forward" class="forward">
+                    S'inscrire
+                  </button>
+                </div>
+              </form>
+            </div>
+            <!-- /Fin Wizard container -->
+          </div>
+        </div>
+        <!-- /Row -->
+      </div>
+      <!-- /Fin Form_container -->
+    </div>
+    <!-- /Fin container -->
+
+    <div class="container">
+      <footer id="home" class="clearfix">
+        <p>© 2023 Codeloccol</p>
+        <ul>
+          <li>
+            <a href="wwww.codeloccol.org" class="animated_link"
+              >Codeloccol.org</a
+            >
+          </li>
+          <li>
+            <a href="instructions.html" class="animated_link">Instructions</a>
+          </li>
+          <li>
+            <a href="contacts.html" class="animated_link">Contactez-nous</a>
+          </li>
+        </ul>
+      </footer>
+      <!-- Fin footer-->
+    </div>
+    <!-- /Fin container -->
+
+    <div class="cd-overlay-nav">
+      <span></span>
+    </div>
+    <!-- /cd-overlay-nav -->
+    <div class="cd-overlay-content">
+      <span></span>
+    </div>
+    <!-- /cd-overlay-content -->
+
+    <!-- COMMON SCRIPTS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/common_scripts.min.js"></script>
+    <script src="js/velocity.min.js"></script>
+    <script src="js/common_functions.js"></script>
+    <script>
+      document.querySelector("#question_2");
+      document.addEventListener("keyup", function countWord() {
+        let res = [];
+        let str = this.value.replace(/[\t\n\r\.\?\!]/gm, " ").split(" ");
+        str.map((s) => {
+          let trimStr = s.trim();
+          if (trimStr.length > 0) {
+            res.push(trimStr);
+          }
+        });
+        document.querySelector("#show").innerText = res.length;
+      });
+    </script>
+    <script>
+      document.querySelector("#question_7");
+      document.addEventListener("keyup", function countWord() {
+        let res = [];
+        let str = this.value.replace(/[\t\n\r\.\?\!]/gm, " ").split(" ");
+        str.map((s) => {
+          let trimStr = s.trim();
+          if (trimStr.length > 0) {
+            res.push(trimStr);
+          }
+        });
+        document.querySelector("#show_2").innerText = res.length;
+      });
+    </script>
+    <!-- Wizard script-->
+    <!--  SCRIPT POST SHEET -->
+
+    <!--  SCRIPT POST SHEET FIN-->
+    <!--script src="js/jquery-1.11.0.min.js" type="text/javascript"></script-->
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- DEBUT -->
+    <!--  <script>
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbyb4krRS4QKLoT-uL5WsltUXqmNrxOcqJG1A_CdUMU7I0JAyQLctZ4d7jZrtJD_0qO6/exec'
+                    const form = document.forms['submit-to-google-sheet']
+                  
+                    form.addEventListener('submit', e => {
+                      e.preventDefault()
+                      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                        .then(response => console.log('Success!', response))
+                        .catch(error => console.error('Error!', error.message))
+                    })
+                  </script> -->
+    <!--    FIN -->
+  </body>
+</html>
