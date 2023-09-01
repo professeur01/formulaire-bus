@@ -14,6 +14,13 @@
     <meta name="author" content="Ansonika" />
     <title>Codeloccol | Formulaire de bus</title>
 
+    <script>
+      function submitForm() {
+        const formulaire = document.getElementById("wrapped");
+        formulaire.submit();
+      }
+    </script>
+
     <!-- Favicons-->
     <link
       rel="shortcut icon"
@@ -193,7 +200,7 @@
               <form
                 name="submit-to-google-sheet"
                 id="wrapped"
-                method="POST"
+                method="post"
                 action="https://script.google.com/macros/s/AKfycbyb4krRS4QKLoT-uL5WsltUXqmNrxOcqJG1A_CdUMU7I0JAyQLctZ4d7jZrtJD_0qO6/exec"
               >
                 <input id="website" name="website" type="text" value="" />
@@ -274,7 +281,52 @@
                       />
                     </div>
                     <!--      Durée de visite -->
-                    <div class="form-group">
+                    <!-- Div radio -->
+<!-- Div radio -->
+<div class="div-radio">
+  <div class="form-check dureLabel">
+    <label class="form-check-label" for="visit_duration">Durée de visite :</label>
+  </div>
+  <div class="form-check dure1">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1 jour" onchange="getVals(this, 'visit_duration_field');">
+    <label class="form-check-label" for="exampleRadios1">
+      1 jour
+    </label>
+  </div>
+  <div class="form-check dure2">
+    <input class="form-check-input " type="radio" name="exampleRadios" id="exampleRadios2" value="2 jours" onchange="getVals(this, 'visit_duration_field');">
+    <label class="form-check-label" for="exampleRadios2">
+      2 jours
+    </label>
+  </div>
+  <div class="form-check dure3">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="3 jours" onchange="getVals(this, 'visit_duration_field');">
+    <label class="form-check-label" for="exampleRadios3">
+      3 jours
+    </label>
+  </div>
+  <div class="form-check dureAutre">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios_Autre" value="Autre">
+    <label class="form-check-label" for="exampleRadios_Autre">
+      Autre
+    </label>
+  </div>
+</div>
+
+
+<!-- Champ de texte pour "Autre" -->
+<div class="form-group" id="radio-other_div">
+  <label class=autre for="visit_duration_other">Autre :</label>
+  <textarea
+    name="visit_duration_other"
+    id="duration_visit"
+    class="form-control"
+    onchange="getVals(this, 'duration_visit_field')"
+    autocomplete="off"
+  ></textarea>
+</div>
+
+                    <!-- <div class="form-group">
                       <label for="visit_duration">Durée de visite :</label>
                       <input
                         type="text"
@@ -285,7 +337,7 @@
                         onchange="getVals(this, 'visit_duration_field')"
                         autocomplete="duration"
                       />
-                    </div>
+                    </div> -->
 
                     <!--  form :raison parler -->
                     <div class="form-group" id="div-reason">
@@ -293,7 +345,7 @@
                         >La raison de votre visite :</label
                       >
                       <select
-                        name="reason_visite"
+                        name="visit_reason"
                         id="reason"
                         class="form-control required"
                         onchange="getVals(this, 'reason_field');"
@@ -315,10 +367,10 @@
                     <div class="form-group" id="autre-raison">
                       <label for="other_reason_name">Autre :</label>
                       <textarea
-                        name="other_reason_name"
+                        name="others_reason"
                         id="other_reason"
                         class="form-control"
-                        onchange="getVals(this, 'reason_field')"
+                        onchange="getVals(this, 'other_reason_field')"
                         autocomplete="off"
                       ></textarea>
                     </div>
@@ -353,7 +405,7 @@
                         name="heard_about_other_codeloccol"
                         id="heard_about_other"
                         class="form-control"
-                        onchange="getVals(this, 'heard_about_field');"
+                        onchange="getVals(this, 'heard_about__other_field');"
                         autocomplete="off"
                       ></textarea>
                     </div>
@@ -381,7 +433,12 @@
                 </div>
                 <!-- /Fin middle-wizard -->
                 <div id="bottom-wizard">
-                  <button type="button" name="forward" class="forward">
+                  <button
+                    type="button"
+                    name="forward"
+                    class="forward"
+                    onclick="submitForm();"
+                  >
                     S'inscrire
                   </button>
                 </div>
@@ -468,17 +525,9 @@
     <script src="js/index.js"></script>
 
     <!-- DEBUT -->
-    <!--  <script>
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbyb4krRS4QKLoT-uL5WsltUXqmNrxOcqJG1A_CdUMU7I0JAyQLctZ4d7jZrtJD_0qO6/exec'
-                    const form = document.forms['submit-to-google-sheet']
-                  
-                    form.addEventListener('submit', e => {
-                      e.preventDefault()
-                      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                        .then(response => console.log('Success!', response))
-                        .catch(error => console.error('Error!', error.message))
-                    })
-                  </script> -->
+
+    <!-- //////////// -->
+
     <!--    FIN -->
   </body>
 </html>
