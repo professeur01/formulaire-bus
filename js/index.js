@@ -212,3 +212,28 @@ radioButtons.forEach(function (radioButton) {
     }
   });
 });
+//DATE DEMAIN OÙ APRÈS DEMAIN
+// Sélectionnez votre élément d'entrée de date par son ID
+var dateInput = document.getElementById("visit_date");
+
+// Fonction pour vérifier et désactiver les jours
+function desactiverJours() {
+  var selectedDate = new Date(dateInput.value);
+  var dateActuelle = new Date();
+  var demain = new Date();
+  demain.setDate(dateActuelle.getDate() + 1);
+
+  
+  if (selectedDate <= dateActuelle) {
+    alert("Vous ne pouvez pas sélectionner aujourd'hui.");
+    
+    dateInput.value = ""; // Effacez la date sélectionnée
+  }else if(selectedDate <= demain){
+    alert("Vous ne pouvez pas sélectionner aujourd'hui.");
+    dateInput.value = ""; // Effacez la date sélectionnée
+  }
+}
+
+// Attachez l'événement onchange à votre champ de date
+dateInput.addEventListener("change", desactiverJours);
+
